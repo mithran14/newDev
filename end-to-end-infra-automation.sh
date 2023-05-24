@@ -7,7 +7,7 @@ ssh -i "C:\Users\DELL\Downloads\opencart.pem" bitnami@ec2-13-127-3-217.ap-south-
     sudo apt-get install git -y
 
     # remove the existing folder
-    rm -r -f ubuntu-health-check
+    rm -r -f TestLeafInc
 
     # pull a git repo for the health check up shell script
     git clone https://github.com/mithran14/TestLeafInc.git
