@@ -11,7 +11,7 @@ ssh -i "C:\Users\DELL\Downloads\opencart.pem" bitnami@ec2-13-127-3-217.ap-south-
 
     # pull a git repo for the health check up shell script
     git clone https://github.com/mithran14/TestLeafInc.git
-    cd ubuntu-health-check
+    cd TestLeafInc
     
     # change the shell to write and read
     chmod 777 ubuntu-health-check.sh
