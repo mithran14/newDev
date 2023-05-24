@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # ssh into the aws linux machine -- opencart app
-ssh -i opencart.pem bitnami@ec2-65-0-72-176.ap-south-1.compute.amazonaws.com << EOF
+ssh -i "C:\Users\DELL\Downloads\opencart.pem" bitnami@ec2-13-127-3-217.ap-south-1.compute.amazonaws.com << EOF
 
     # install git assuming it does not exist
     sudo apt-get install git -y
