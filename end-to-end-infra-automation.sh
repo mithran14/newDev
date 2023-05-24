@@ -10,19 +10,19 @@ ssh -i "C:\Users\DELL\Downloads\opencart.pem" bitnami@ec2-13-127-3-217.ap-south-
     rm -r -f ubuntu-health-check
 
     # pull a git repo for the health check up shell script
-    git clone https://github.com/TestLeafInc/ubuntu-health-check.git
+    git clone https://github.com/mithran14/TestLeafInc.git
     cd ubuntu-health-check
     
     # change the shell to write and read
-    chmod 777 health-check.sh
+    chmod 777 ubuntu-health-check.sh
 
     # run the health check script and capture its output
-   ./health-check.sh > health-check-output.txt
+   ./ubuntu-health-check.sh > health-check-output.txt
 
 EOF
 
 # Copy the output file from AWS instance to local machine
-scp -i opencart.pem bitnami@ec2-65-0-72-176.ap-south-1.compute.amazonaws.com:~/ubuntu-health-check/health-check-output.txt .
+ssh -i "C:\Users\DELL\Downloads\opencart.pem" bitnami@ec2-13-127-3-217.ap-south-1.compute.amazonaws.com:~/ubuntu-health-check/health-check-output.txt .
 
 # Read the output file
 output=$(cat health-check-output.txt)
