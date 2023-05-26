@@ -19,7 +19,7 @@ ssh -i "C:\Users\DELL\Downloads\opencart.pem" bitnami@ec2-15-206-88-77.ap-south-
     #chmod 777 ubuntu-health-check.sh
 
     # run the health check script and capture its output
-    sh ubuntu-health-check > health-check-output.txt
+    sh ubuntu-health-check.sh > health-check-output.txt
 
 EOF
 
