@@ -5,6 +5,8 @@ ssh -i "C:\Users\DELL\Downloads\opencart.pem" bitnami@ec2-15-206-88-77.ap-south-
 
     # install git assuming it does not exist
     sudo apt-get install git -y
+    sudo apt-get install bc
+    sudo apt-get install mailutils
 
     # remove the existing folder
     rm -r -f TestLeafInc
