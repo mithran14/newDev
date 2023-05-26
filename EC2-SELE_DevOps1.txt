@@ -1,0 +1,121 @@
+https://the.earth.li/~sgtatham/putty/latest/w64/putty-64bit-0.78-installer.msi
+
+Steps to connect to your Ubuntu from your local Windows Machine
+
+Pre-requisite: Download your putty
+
+1) Get your EC2 instance's public DNS: Go to the EC2 Console, click on "Instances" in the left menu, and select your instance. In the details pane at the bottom, copy the "Public DNS (IPv4)" value.
+
+2) Configure PuTTY:
+
+a) Open PuTTY (Start > All Programs > PuTTY > PuTTY).
+b) In the "Host Name (or IP address)" box, enter ubuntu@<your instance's public DNS>. Replace <your instance's public DNS> with the value you copied earlier.
+
+ubuntu@ec2-43-204-219-171.ap-south-1.compute.amazonaws.com
+ubuntu@ec2-15-207-247-46.ap-south-1.compute.amazonaws.com
+
+ec2-15-207-247-46.ap-south-1.compute.amazonaws.com
+
+c) In the left menu, go to Connection > SSH > Auth.
+d) In the "Private key file for authentication" box, click "Browse" and select your .ppk file.
+e) Go back to "Session" in the left menu.
+f) In the "Saved Sessions" box, enter a name for this configuration (e.g., "My EC2 instance"), and click "Save". This way, you won't have to enter all these details again in the future.
+g) Connect to your EC2 instance: Click "Open". If this is the first time you are connecting to this instance, PuTTY displays a security alert dialog box that asks whether you trust the host you are connecting to. Click "Yes".
+
+Update all apt-get latest
+
+0) sudo apt-get update
+  
+1) JDK
+sudo apt-get install openjdk-8-jdk
+java -version
+
+2) MVN
+sudo apt-get install maven
+mvn -v
+
+3) Visual GUI
+sudo apt-get install xvfb
+Xvfb :99 &
+export DISPLAY=:99
+
+echo $DISPLAY
+
+4) Chrome Browser Binary
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo dpkg -i google-chrome-stable_current_amd64.deb
+sudo apt --fix-broken install
+
+5) Optional --> Firefox
+sudo apt-get install firefox
+
+6) Selenium Source (Project)
+git clone https://github.com/TestLeafInc/webdriver-tests
+
+cd webdriver-tests
+ls
+date
+cd reports
+17-May-2023 13-45-29
+
+pscp -i C:\path\to\your\key.ppk ubuntu@ec2-15-207-247-46.ap-south-1.compute.amazonaws.com:/home/ubuntu/webdriver-tests/reports/14-May-2023\ 12-03-48/results.html C:\path\to\local\directory
+
+cd "C:\Program Files\PuTTY\"
+
+pscp -i "C:\Users\DELL\Downloads\Selenium.ubuntu.ppk" ubuntu@ec2-43-204-219-171.ap-south-1.compute.amazonaws.com:"/home/ubuntu/webdriver-tests/reports/19-May-2023\ 05-23-04/result.html" C:\Users\DELL\Downloads\DevOps
+
+65248880.jpg  727314303.jpg  747585195.jpg
+
+
+pscp -i "C:\Users\DELL\Downloads\Selenium.ubuntu.ppk" ubuntu@ec2-43-204-219-171.ap-south-1.compute.amazonaws.com:"/home/ubuntu/webdriver-tests/reports/19-May-2023\ 05-23-04/images/747585195.jpg" C:\Users\DELL\Downloads\DevOps
+
+
+ssh -i "C:\Users\DELL\Downloads\newpem.pem" ubuntu@ec2-43-204-219-171.ap-south-1.compute.amazonaws.com
+
+sudo apt update
+sudo apt install awscli
+aws --version
+aws s3 cp /home/ubuntu/webdriver-tests/reports/20-May-2023\ 07-22-57/images s3://my-test45-bucket/collections --recursive
+aws s3 cp /home/ubuntu/webdriver-tests/reports/26-May-2023\ 01-13-30/result.html s3://my-test45-bucket/run/ 
+
+chmod 400 newpem.pem
+chmod +x accessEC2.sh
+chmod +x Selenium.sh
+
+aws s3api create-bucket --bucket my-test45-bucket --region ap-south-1 --acl bucket-owner-full-control
+
+ssh -i "C:\Users\DELL\Downloads\opencart.pem" bitnami@ec2-65-2-9-87.ap-south-1.compute.amazonaws.com
+
+ssh -i "C:\Users\DELL\Downloads\opencart.pem" bitnami@ec2-15-206-88-77.ap-south-1.compute.amazonaws.com
+
+define('DB_PASSWORD', '135545bef2ee342a27dcbb02ce03df52f4d1417dea322d9121c6ff8f5f55aa46');
+
+free | grep Mem | awk '{print $3 / $2*100}'
+
+top -bn1 | grep "%Cpu(s)" | awk '{print $8}'       
+top -bn1 | grep "%Cpu(s)" | awk '{print 100 - $8}'
+ps -ef
+
+sudo mysqladmin -h 3306 127.0.0.1 -P 80 -u bn_opencart -p status
+
+135545bef2ee342a27dcbb02ce03df52f4d1417dea322d9121c6ff8f5f55aa46
+
+bitnami@ip-172-31-91-255:~$ mysqladmin -P 3306 -h 127.0.0.1 -u bn_opencart -p status
+Enter password: 
+Uptime: 3318  Threads: 1  Questions: 1051  Slow queries: 0  Opens: 108  Open tables: 101  Queries per second avg: 0.316
+bitnami@ip-172-31-91-255:~$ 
+
+
+icacls your_key.pem /inheritance:r
+icacls your_key.pem /GRANT:R "%username%:(R)"
+
+
+ssh -i "C:\Users\DELL\Downloads\DevOps\newpem.pem" ubuntu@ec2-43-204-219-171.ap-south-1.compute.amazonaws.com "bash -s" < Selenium.sh
+scp -i "C:\Users\DELL\Downloads\DevOps\newpem.pem" Selenium.sh ubuntu@ec2-43-204-219-171.ap-south-1.compute.amazonaws.com:/home/ubuntu
+
+scp Selenium.sh ubuntu@ec2-43-204-219-171.ap-south-1.compute.amazonaws.com:/home/ubuntu..
+scp -i "C:\Users\DELL\Downloads\DevOps\newpem.pem" script123.sh ubuntu@ec2-43-204-219-171.ap-south-1.compute.amazonaws.com:/home/ubuntu
+https://github.com/mithran14/newDev/blob/c14934574f75ed788ba33303d789de46ddab96a2/version.sh
+
+scp -i "C:\Users\DELL\Downloads\DevOps\opencart.pem" health-check.sh bitnami@ec2-13-127-3-217.ap-south-1.compute.amazonaws.com:/home/bitnami
+scp -i "C:\Users\DELL\Downloads\opencart.pem" bitnami@ec2-15-206-88-77.ap-south-1.compute.amazonaws.com:~/ubuntu-health-check/health-check-output.txt .
