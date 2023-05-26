@@ -9,8 +9,7 @@ ssh -i "C:\Users\DELL\Downloads\opencart.pem" bitnami@ec2-15-206-88-77.ap-south-
     sudo apt-get install mailutils
 
     # remove the existing folder
-    rm -r -f TestLeafInc
-    rm -r -f ubuntu-health-check
+    rm -r -f Get
     
     # pull a git repo for the health check up shell script
     https://github.com/mithran14/Get.git
@@ -20,7 +19,7 @@ ssh -i "C:\Users\DELL\Downloads\opencart.pem" bitnami@ec2-15-206-88-77.ap-south-
     chmod 777 health-check.sh
 
     # run the health check script and capture its output
-    sh health-check.sh.sh > health-check-output.txt
+    sh health-check.sh > health-check-output.txt
 
 EOF
 
