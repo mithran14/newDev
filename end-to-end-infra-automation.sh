@@ -16,10 +16,10 @@ ssh -i "C:\Users\DELL\Downloads\opencart.pem" bitnami@ec2-15-206-88-77.ap-south-
     cd Get
     
     # change the shell to write and read
-    #chmod 777 health-check.sh
-
+    chmod +x health-check.sh
+    
     # run the health check script and capture its output
-    ./health-check.sh > health-check-output.txt
+    sh health-check.sh > health-check-output.txt
 
 EOF
 
