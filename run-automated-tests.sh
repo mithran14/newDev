@@ -1,6 +1,6 @@
 #!/bin/bash
 # Connect to the EC2 instance
-ssh -i ubuntu-selenium.pem ubuntu@ec2-65-2-71-131.ap-south-1.compute.amazonaws.com  << EOF
+ssh -i tryubuntu.pem ubuntu@ec2-3-111-147-107.ap-south-1.compute.amazonaws.com  << EOF
 
 # Update the package lists for upgrades and new package installations
 sudo apt-get update
