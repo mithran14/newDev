@@ -10,13 +10,14 @@ ssh -i "C:\Users\DELL\Downloads\opencart.pem" bitnami@ec2-15-206-88-77.ap-south-
 
     # remove the existing folder
     rm -r -f TestLeafInc
-
+    rm -r -f ubuntu-health-check
+    
     # pull a git repo for the health check up shell script
     https://github.com/TestLeafInc/ubuntu-health-check.git
     cd ubuntu-health-check
     
     # change the shell to write and read
-    #chmod 777 ubuntu-health-check.sh
+    chmod 777 ubuntu-health-check.sh
 
     # run the health check script and capture its output
     sh ubuntu-health-check.sh > health-check-output.txt
