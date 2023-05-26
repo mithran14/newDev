@@ -12,7 +12,7 @@ ssh -i "C:\Users\DELL\Downloads\opencart.pem" bitnami@ec2-15-206-88-77.ap-south-
     rm -r -f Get
     
     # pull a git repo for the health check up shell script
-    https://github.com/mithran14/Get.git
+    git clone https://github.com/mithran14/Get.git
     cd Get
     
     # change the shell to write and read
