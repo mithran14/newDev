@@ -24,7 +24,7 @@ ssh -i "C:\Users\DELL\Downloads\opencart.pem" bitnami@ec2-15-206-88-77.ap-south-
 EOF
 
 # Copy the output file from AWS instance to local machine
-ssh -i "C:\Users\DELL\Downloads\opencart.pem" bitnami@ec2-15-206-88-77.ap-south-1.compute.amazonaws.com:~/ubuntu-health-check/health-check-output.txt
+ssh -i "C:\Users\DELL\Downloads\opencart.pem" bitnami@ec2-15-206-88-77.ap-south-1.compute.amazonaws.com:~/Get/health-check-output.txt
 #scp -i "C:\Users\DELL\Downloads\opencart.pem" bitnami@ec2-15-206-88-77.ap-south-1.compute.amazonaws.com:~/ubuntu-health-check/health-check-output.txt .
 
 # Read the output file
