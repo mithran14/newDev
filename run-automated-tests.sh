@@ -1,6 +1,6 @@
 #!/bin/bash
 # Connect to the EC2 instance
-scp -i "opencart.pem" bitnami@ec2-13-127-80-239.ap-south-1.compute.amazonaws.com -o StrictHostKeyChecking=no  << EOF
+ssh -i "opencart.pem" bitnami@ec2-13-127-80-239.ap-south-1.compute.amazonaws.com -o StrictHostKeyChecking=no  << EOF
 
 # Update the package lists for upgrades and new package installations
 sudo apt-get update
