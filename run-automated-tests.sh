@@ -1,6 +1,6 @@
 #!/bin/bash
 # Connect to the EC2 instance
-ssh -i tryubuntu.pem ubuntu@ec2-3-111-147-107.ap-south-1.compute.amazonaws.com  << EOF
+ssh -i "opencart.pem" bitnami@13.127.80.23 -o StrictHostKeyChecking=no  << EOF
 
 # Update the package lists for upgrades and new package installations
 sudo apt-get update
@@ -10,14 +10,13 @@ sudo apt-get install -y openjdk-8-jdk
 
 # Install Maven
 sudo apt-get install -y maven
+# Install xvfbls
 
-# Install xvfb
 sudo apt-get install -y xvfb
 
 # Start xvfb
 Xvfb :99 &
 export DISPLAY=:99
-
 # Download and install Google Chrome
 if ! command -v google-chrome > /dev/null; then
   wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
@@ -27,11 +26,11 @@ else
   echo "Google Chrome is already installed."
 fi
 
-
 # Clone the webdriver-tests repository
-git clone https://github.com/TestLeafInc/opencart-webdriver
+rm -r -f opencart-webdriver
+git clone https://github.com/mithran14/opencart-webdriver.git
 
-# Move to the webdriver-tests folder
+# Move to the opencart-webdriver folder
 cd opencart-webdriver
 
 # pull the changes if any
@@ -40,7 +39,15 @@ git pull
 # Run Maven tests
 mvn clean test
 
+yes | sudo apt install awscli
+aws configure set aws_access_key_id AKIA2R4ARFMK3AW3J3VR
+aws configure set aws_secret_access_key 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
+aws configure set region ap-south-1
+aws configure set output json
+
 # Push the results to S3 (make sure to install and configure awsconfigure before)
-aws s3 sync reports/ s3://reports-html-selenium
+aws s3api create-bucket --bucket reports3004-html-selenium3004 --region ap-south-1 --create-bucket-configuration LocationConstraint=ap-south-1
+aws s3 sync reports/ s3://reports3004-html-selenium3004
+
 
 EOF
